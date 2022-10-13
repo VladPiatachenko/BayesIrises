@@ -1,4 +1,7 @@
+package opis.bayes;
+
 import java.util.ArrayList;
+import opis.Iris;
 
 public class StatCalculator {
     public static Iris mean(ArrayList<Iris> data){

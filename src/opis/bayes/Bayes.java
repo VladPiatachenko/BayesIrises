@@ -1,10 +1,14 @@
+package opis.bayes;
+
+import opis.Iris;
+
 import java.util.ArrayList;
 
 public class Bayes {
 
     public static double probability(Iris x, ArrayList<Iris> data){
-        Iris probs=StatCalculator.standartDeviation(data);
-        Iris mprob=StatCalculator.mean(data);
+        Iris probs= StatCalculator.standartDeviation(data);
+        Iris mprob= StatCalculator.mean(data);
 
         double[] prob=new double[5];
         prob[0]=(1/(Math.pow(2*Math.PI,0.5)*probs.petal_width))*
