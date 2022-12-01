@@ -1,23 +1,24 @@
 package opis;
 
+import java.util.TreeMap;
+
 public class Iris {
-   public double sepal_length;//cm
-   public double sepal_width;// cm
-   public double petal_length;// cm
-   public double petal_width;// cm
+   public TreeMap<String,Double> params;
    public String name;
+   public int target;//for svm
 
    public Iris(double sepal_length, double sepal_width, double petal_length, double petal_width, String name) {
-      this.sepal_length = sepal_length;
-      this.sepal_width = sepal_width;
-      this.petal_length = petal_length;
-      this.petal_width = petal_width;
+      params = new TreeMap<>();
+      params.put("Sepal Length",sepal_length);
+      params.put("Sepal Width",sepal_width);
+      params.put("Petal Length",petal_length);
+      params.put("Petal Width",petal_width);
       this.name=name;
    }
    @Override
    public String toString(){
-      return "Iris:"+name+"; sepal length="+sepal_length+
-              "; sepal width="+sepal_width+"; petal length="+petal_length+
-              "; petal width="+petal_width;
+      return "Iris:"+name+"; sepal length="+params.get("Sepal Length")+
+              "; sepal width="+params.get("Sepal Width")+"; petal length="+params.get("Petal Length")+
+              "; petal width="+params.get("Petal Width");
    }
 }
